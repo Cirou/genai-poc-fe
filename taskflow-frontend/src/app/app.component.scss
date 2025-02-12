@@ -1,0 +1,10 @@
+.main-container {
+  display: flex;
+  height: calc(100vh - 60px); // Sottrarre l'altezza dell'header
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
