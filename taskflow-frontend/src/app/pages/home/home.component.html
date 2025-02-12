@@ -1,0 +1,20 @@
+<div class="home-container">
+  <section class="hero">
+    <h1>Welcome to TaskFlow</h1>
+    <p>Manage your projects and tasks efficiently</p>
+  </section>
+
+  <section class="quick-actions">
+    <h2>Quick Actions</h2>
+    <div class="action-grid">
+      <button class="action-button" (click)="navigateTo('/projects')">
+        <span class="action-icon">folder</span>
+        <span>View Projects</span>
+      </button>
+      <button class="action-button" (click)="navigateTo('/tasks')">
+        <span class="action-icon">task</span>
+        <span>View Tasks</span>
+      </button>
+    </div>
+  </section>
+</div>
