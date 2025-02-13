@@ -1,0 +1,41 @@
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  height: 100%;
+  border-right: 1px solid #e0e0e0;
+  padding: 20px 0;
+
+  .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 5px;
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        i {
+          margin-right: 10px;
+          width: 20px;
+          text-align: center;
+        }
+
+        &:hover {
+          background-color: #e9ecef;
+        }
+
+        &.active {
+          background-color: #e9ecef;
+          color: #007bff;
+        }
+      }
+    }
+  }
+}
