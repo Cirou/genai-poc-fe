@@ -1,0 +1,36 @@
+<div class="home-container">
+  <section class="welcome-section">
+    <h1>Benvenuto in TaskFlow</h1>
+    <p>Gestisci i tuoi progetti e le tue attività in modo efficiente</p>
+  </section>
+
+  <section class="quick-actions">
+    <h2>Azioni Rapide</h2>
+    <div class="actions-grid">
+      @for (action of quickActions; track action.label) {
+        <a [routerLink]="action.route" class="action-card">
+          <span class="icon">{{action.icon}}</span>
+          <span class="label">{{action.label}}</span>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section class="recent-projects">
+    <h2>Progetti Recenti</h2>
+    <div class="projects-grid">
+      @for (project of recentProjects; track project.id) {
+        <div class="project-card">
+          <h3>{{project.name}}</h3>
+          <div class="project-stats">
+            <span>Attività: {{project.tasks}}</span>
+            <div class="progress-bar">
+              <div class="progress" [style.width.%]="project.completion"></div>
+            </div>
+            <span>{{project.completion}}% completato</span>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</div>
