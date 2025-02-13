@@ -1,0 +1,40 @@
+<div class="projects-container">
+  <header class="projects-header">
+    <h1>Progetti</h1>
+    <button class="btn-primary" [routerLink]="['/projects/new']">
+      Nuovo Progetto
+    </button>
+  </header>
+
+  <div class="projects-grid">
+    @for (project of projects; track project.id) {
+      <div class="project-card">
+        <div class="project-header">
+          <h3>{{project.name}}</h3>
+          <div class="project-actions">
+            <button class="btn-icon" [routerLink]="['/projects', project.id, 'edit']">✏️</button>
+            <button class="btn-icon" (click)="deleteProject(project.id)">🗑️</button>
+          </div>
+        </div>
+        <p class="project-description">{{project.description}}</p>
+        <div class="project-stats">
+          <span>Attività: {{project.taskCount}}</span>
+          <div class="progress-bar">
+            <div class="progress" [style.width.%]="project.completion"></div>
+          </div>
+          <span>{{project.completion}}% completato</span>
+        </div>
+        <button class="btn-secondary view-details" [routerLink]="['/projects', project.id]">
+          Visualizza Dettagli
+        </button>
+      </div>
+    } @empty {
+      <div class="no-projects">
+        <p>Nessun progetto disponibile</p>
+        <button class="btn-primary" [routerLink]="['/projects/new']">
+          Crea il tuo primo progetto
+        </button>
+      </div>
+    }
+  </div>
+</div>
