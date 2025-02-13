@@ -1,0 +1,17 @@
+<div class="projects-container">
+  <h2>Projects</h2>
+  
+  <div class="project-list">
+    <div class="card mb-3" *ngFor="let project of projects">
+      <div class="card-body">
+        <h5 class="card-title">{{project.name}}</h5>
+        <p class="card-text">Status: {{project.status}}</p>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" [style.width.%]="project.progress">
+            {{project.progress}}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
